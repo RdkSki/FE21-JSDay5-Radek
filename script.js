@@ -1,4 +1,5 @@
-let car1 = {
+/*  BASIC OBJECTS 
+ let car1 = {
  brand: "Ford",
  model: "Focus",
  fuel: "Diesel",
@@ -95,4 +96,55 @@ var arrayPerson = [person1, person2, person3];
 
 for (let val of arrayPerson) {
     document.getElementById("persons").innerHTML += val.printPerson();
+} */
+
+class Car {
+    brand;
+    model;
+    fuel;
+
+    constructor(a, b, c){
+        this.brand = a;
+        this.model = b;
+        this.fuel = c;
+    }
+    printCar(){
+        return `My car is a ${this.brand}, model ${this.model} and it drives on ${this.fuel}. <br>`;
+    }
 }
+
+let car1 = new Car("Ford", "Focus", "diesel");
+let car2 = new Car("Skoda", "Forman", "gasoline");
+let car3 = new Car("Toyota", "Mirai", "hydrogen");
+
+var arrayCar = [car1, car2, car3];
+
+for (let val of arrayCar) {
+    document.getElementById("cars").innerHTML += val.printCar();
+}
+
+class Animal {
+    species;
+    gender;
+    name;
+
+    constructor(d, e, f){
+        this.species = d;
+        this.gender = e;
+        this.name = f;
+    }
+    printAnimal(){
+        return `My ${this.species} is a ${this.gender} with the name ${this.name}. <br>`;  
+    }
+}
+
+let animal1 = new Animal("dog", "male", "Amigo");
+let animal2 = new Animal("horse", "male", "Fritzl");
+let animal3 = new Animal("dog", "female", "Hummel");
+
+var arrayAnimal = [animal1, animal2, animal3];
+
+for (let val of arrayAnimal) {
+    document.getElementById("animals").innerHTML += val.printAnimal();
+}
+
