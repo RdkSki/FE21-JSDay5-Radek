@@ -86,12 +86,33 @@ class Person {
     }
 }
 
-let person1 = new Person("Alex", "Maurer", 34);
-let person2 = new Person("Maria", "Meier", 43);
-let person3 = new Person("Karl", "Auer", 54);
+// let person1 = new Person("Alex", "Maurer", 34);
+// let person2 = new Person("Maria", "Meier", 43);
+// let person3 = new Person("Karl", "Auer", 54);
 
-var arrayPerson = [person1, person2, person3];
+// var arrayPerson = [person1, person2, person3];
 
-for (let val of arrayPerson) {
-    document.getElementById("persons").innerHTML += val.printPerson();
+// for (let val of arrayPerson) {
+//     document.getElementById("persons").innerHTML += val.printPerson();
+// }
+class Profession extends Person {
+    jobposition;
+
+    constructor(g, h, i, m){
+        super(g, h, i);
+        this.jobposition = m;
+    }
+    printPos(){
+        return `${super.printPerson()} I work as a ${this.jobposition}.<br><br>`;
+    }
+}
+
+let prof1 = new Profession("Alex", "Maurer", 34, "assistant");
+let prof2 = new Profession("Maria", "Meier", 43, "CEO");
+let prof3 = new Profession("Karl", "Auer", 54, "key accounter");
+
+var arrayProfession = [prof1, prof2, prof3];
+
+for (let val of arrayProfession) {
+    document.getElementById("persons").innerHTML += val.printPos();
 }
